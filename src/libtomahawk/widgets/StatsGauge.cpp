@@ -28,8 +28,6 @@
 #include <QPropertyAnimation>
 #include <QLayout>
 #include <QString>
-#include <boost/concept_check.hpp>
-
 
 StatsGauge::StatsGauge( QWidget* parent )
     : QProgressBar( parent )
