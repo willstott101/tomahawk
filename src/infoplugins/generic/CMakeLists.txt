@@ -1,6 +1,5 @@
 include_directories(
     ${ECHONEST_INCLUDE_DIR}
-    ${Boost_INCLUDE_DIR}
 )
 if(WIN32 OR APPLE)
 if(BUILD_GUI AND LIBSNORE_FOUND)
