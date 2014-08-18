@@ -48,10 +48,6 @@
 #include <QMimeData>
 #include <QSize>
 
-#include <boost/bind.hpp>
-#include <boost/lambda/construct.hpp>
-#include <boost/lambda/bind.hpp>
-
 using namespace Tomahawk;
 
 
