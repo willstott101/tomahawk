@@ -312,13 +312,13 @@ SourcesModel::appendGroups()
 
     // super collection
 /*    GenericPageItem* sc = new GenericPageItem( this, m_browse, tr( "SuperCollection" ), ImageRegistry::instance()->icon( RESPATH "images/supercollection.svg" ),
-                                                  boost::bind( &ViewManager::showSuperCollection, ViewManager::instance() ),
-                                                  boost::bind( &ViewManager::superCollectionView, ViewManager::instance() ) );
+                                                  bind( &ViewManager::showSuperCollection, ViewManager::instance() ),
+                                                  bind( &ViewManager::superCollectionView, ViewManager::instance() ) );
     sc->setSortValue( 5 );*/
 
     GenericPageItem* newReleases = new GenericPageItem( this, m_browse, tr( "New Releases" ), ImageRegistry::instance()->icon( RESPATH "images/new-releases.svg" ),
-                                                boost::bind( &ViewManager::showNewReleasesPage, ViewManager::instance() ),
-                                                boost::bind( &ViewManager::newReleasesWidget, ViewManager::instance() ) );
+                                                bind( &ViewManager::showNewReleasesPage, ViewManager::instance() ),
+                                                bind( &ViewManager::newReleasesWidget, ViewManager::instance() ) );
     newReleases->setSortValue( 7 );
 
     m_collectionsGroup = new GroupItem( this, m_rootItem, tr( "Friends" ), 4 );
@@ -345,8 +345,8 @@ SourcesModel::appendPageItem( const QString& name, ViewPage* page, int sortValue
     QModelIndex parentIndex = indexFromItem( m_browse );
     beginInsertRows( parentIndex, rowCount( parentIndex ), rowCount( parentIndex ) );
     GenericPageItem* pageItem = new GenericPageItem( this, m_browse, page->title(), page->pixmap(),
-                                            boost::bind( &ViewManager::showDynamicPage, ViewManager::instance(), name ),
-                                            boost::bind( &ViewManager::dynamicPageWidget, ViewManager::instance(), name ) );
+                                            bind( &ViewManager::showDynamicPage, ViewManager::instance(), name ),
+                                            bind( &ViewManager::dynamicPageWidget, ViewManager::instance(), name ) );
     pageItem->setDeletable( page->isDeletable() );
 
     if ( sortValue )
