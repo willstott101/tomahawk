@@ -42,7 +42,6 @@ Required dependencies:
 * QJson 0.8.1 - http://qjson.sourceforge.net/
 * SQLite 3.6.22 - http://www.sqlite.org/
 * TagLib 1.8 - http://developer.kde.org/~wheeler/taglib.html
-* Boost 1.3 - http://www.boost.org/
 * Lucene++ 3.0.6 - https://github.com/luceneplusplus/LucenePlusPlus/
 * libechonest 2.2.0 - http://projects.kde.org/projects/playground/libs/libechonest/
 * Attica 0.4.0 - ftp://ftp.kde.org/pub/kde/stable/attica/

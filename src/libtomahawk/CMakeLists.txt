@@ -408,7 +408,6 @@ include_directories(
     ${ECHONEST_INCLUDE_DIR}
     ${LUCENEPP_INCLUDE_DIRS}
     ${PHONON_INCLUDES}
-    ${Boost_INCLUDE_DIR}
 
     ${LIBPORTFWD_INCLUDE_DIR}
     ${QuaZip_INCLUDE_DIR}
