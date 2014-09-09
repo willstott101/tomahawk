@@ -29,6 +29,7 @@
 #include "DllMacro.h"
 
 #include <echonest/Playlist.h>
+#include <echonest/Genre.h>
 
 namespace Tomahawk
 {
@@ -83,7 +84,7 @@ public:
 
     static QStringList styles();
     static QStringList moods();
-    static QStringList genres();
+    static Echonest::Genres genres();
     static QStringList userCatalogs();
     static QByteArray catalogId( const QString& collectionId );
 
@@ -128,7 +129,7 @@ private:
 
     static QStringList s_styles;
     static QStringList s_moods;
-    static QStringList s_genres;
+    static Echonest::Genres s_genres;
     static QNetworkReply* s_stylesJob;
     static QNetworkReply* s_moodsJob;
     static QNetworkReply* s_genresJob;
