@@ -244,8 +244,8 @@ if ( NOT CXX_STD_FUNCTIONAL AND NOT CXX_STD_TR1_FUNCTIONAL )
         "Used compiler neither provides std::function nor std::tr1::function")
 endif()
 
-macro_optional_find_package(Echonest 2.2.0)
-macro_log_feature(ECHONEST_FOUND "Echonest" "Qt library for communicating with The Echo Nest" "http://projects.kde.org/libechonest" TRUE "" "libechonest 2.2.0 is needed for dynamic playlists and the infosystem")
+macro_optional_find_package(Echonest 2.3.0)
+macro_log_feature(ECHONEST_FOUND "Echonest" "Qt library for communicating with The Echo Nest" "http://projects.kde.org/libechonest" TRUE "" "libechonest 2.3.0 is needed for dynamic playlists and the infosystem")
 
 macro_optional_find_package(CLucene 0.9.23)
 macro_log_feature(CLucene_FOUND "CLucene" "The open-source, C++ search engine" "http://clucene.sf.net" TRUE "" "CLucene is used for indexing the collection")
