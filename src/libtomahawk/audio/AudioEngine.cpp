@@ -103,7 +103,8 @@ AudioEnginePrivate::onStateChanged( Phonon::State newState, Phonon::State oldSta
         q_ptr->setState( AudioEngine::Stopped );
     }
 
-    if ( oldState == Phonon::PlayingState )
+    //TODO- Only seek on click/release (or similar fix), else this has some nasty effects.
+    if ( oldState == Phonon::PlayingState || oldState == Phonon::BufferingState)
     {
         bool stopped = false;
         switch ( newState )
