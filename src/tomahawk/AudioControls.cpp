@@ -272,6 +272,7 @@ AudioControls::onPlaybackStarted( const Tomahawk::result_ptr result )
     if ( duration == -1 || duration == 0 )
         duration = result.data()->track()->duration() * 1000;
 
+    ui->seekSlider->scrubReset();
     ui->seekSlider->setRange( 0, duration );
     ui->seekSlider->setValue( 0 );
     ui->seekSlider->setEnabled( AudioEngine::instance()->canSeek() );

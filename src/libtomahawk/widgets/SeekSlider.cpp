@@ -68,6 +68,9 @@ SeekSlider::~SeekSlider()
 void
 SeekSlider::mousePressEvent( QMouseEvent* event )
 {
+    //Start a new scrub.
+    isNewScrub = true;
+
     if ( event->button() == Qt::LeftButton )
     {
         QMouseEvent eventSwap( QEvent::MouseButtonRelease, event->pos(), event->globalPos(), Qt::MidButton, Qt::MidButton, event->modifiers() );
@@ -77,6 +80,16 @@ SeekSlider::mousePressEvent( QMouseEvent* event )
         QSlider::mousePressEvent( event );
 }
 
+void
+SeekSlider::mouseMoveEvent( QMouseEvent* event)
+{
+    // Check that scrubbing isn't carried over after SeekSlider change.
+    if (isNewScrub)
+        QSlider::mouseMoveEvent (event);
+}
+
+void
+SeekSlider::scrubReset(){ isNewScrub = false; }
 
 void
 SeekSlider::setValue( int value )

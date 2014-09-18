@@ -39,17 +39,19 @@ public:
 
     void setAcceptWheelEvents( bool b ) { m_acceptWheelEvents = b; }
 
-    //override and disable scrubbing
-    void mouseMoveEvent( QMouseEvent* event) { return; }
-
 public slots:
     void setValue( int value );
+    void scrubReset();
 
 protected:
+
     void mousePressEvent( QMouseEvent* event );
+    void mouseMoveEvent( QMouseEvent* event);
     void wheelEvent( QWheelEvent* event );
 
 private:
+
+    bool isNewScrub = false;
     QTimeLine* m_timeLine;
     bool m_acceptWheelEvents;
 };
