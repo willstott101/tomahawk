@@ -39,6 +39,9 @@ public:
 
     void setAcceptWheelEvents( bool b ) { m_acceptWheelEvents = b; }
 
+    //override and disable scrubbing
+    void mouseMoveEvent( QMouseEvent* event) { return; }
+
 public slots:
     void setValue( int value );
 
