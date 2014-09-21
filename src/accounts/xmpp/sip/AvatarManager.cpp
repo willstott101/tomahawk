@@ -120,6 +120,20 @@ AvatarManager::onNewIq( const Jreen::IQ& iq )
         {
 //            qDebug() << "vcard: got photo data" << id;
 
+            QPixmap avatar;
+            avatar.loadFromData( photo.data() );
+            QRect* cropRect = new QRect();
+            if (avatar.height() > avatar.width()) {
+                cropRect->setWidth( avatar.width() );
+                cropRect->setHeight( avatar.width() );
+                cropRect->moveTop((avatar.height() - avatar.width()) / 2);
+            } else {
+                cropRect->setWidth( avatar.height() );
+                cropRect->setHeight( avatar.height() );
+                cropRect->moveLeft((avatar.width() - avatar.height()) / 2);
+            }
+            avatar = avatar.copy(*cropRect);
+
             avatarHash = QCryptographicHash::hash( photo.data(), QCryptographicHash::Sha1 ).toHex();
 
             if ( !m_cacheDir.exists() )
